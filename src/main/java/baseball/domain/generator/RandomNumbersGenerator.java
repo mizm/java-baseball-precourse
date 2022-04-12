@@ -8,7 +8,8 @@ import java.util.List;
 
 public class RandomNumbersGenerator implements NumbersGenerator {
     @Override
-    public List<Integer> generate() {
-        return Randoms.pickUniqueNumbersInRange(Number.MIN, Number.MAX, Numbers.NUMBERS_MAX_SIZE);
+    public Numbers generate() {
+        List<Integer> nums = Randoms.pickUniqueNumbersInRange(Number.MIN, Number.MAX, Numbers.NUMBERS_MAX_SIZE);
+        return Numbers.fromList(nums);
     }
 }

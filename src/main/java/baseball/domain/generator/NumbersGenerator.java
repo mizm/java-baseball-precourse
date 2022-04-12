@@ -1,8 +1,8 @@
 package baseball.domain.generator;
 
-import java.util.List;
+import baseball.domain.Numbers;
 
 public interface NumbersGenerator {
 
-    List<Integer> generate();
+    Numbers generate();
 }

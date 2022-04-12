@@ -15,7 +15,12 @@ public class Numbers {
         if (numberSet.size() != NUMBERS_MAX_SIZE) {
             throw new IllegalArgumentException(NUMBERS_SIZE_NOT_MATCH_EXCEPTION_MESSAGE);
         }
-        this.numbers = numbers;
+        ArrayList<Number> copy = new ArrayList<>(numbers);
+        this.numbers = copy;
+    }
+
+    public static Numbers from(List<Number> numbers) {
+        return new Numbers(numbers);
     }
 
     public static Numbers fromString(String numberString) {

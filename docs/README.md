@@ -19,5 +19,10 @@
 
 ## numberGenerator
 
-- 숫자를 3(룰에 맞게)개 생성한다.
-- 중복되는 숫자가 없이 3개의 숫자를 생성한다.
+- RandomNumbersGenerator
+    - 숫자를 3(룰에 맞게)개 생성한다.
+    - 중복되는 숫자가 없이 3개의 Numbers를 생성한다.
+- StringNumbersGenerator
+    - 문자열로 부터 Numbers를 생성한다
+
+## player
