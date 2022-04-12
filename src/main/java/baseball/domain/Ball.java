@@ -44,14 +44,14 @@ public class Ball {
         }
     }
 
-    public static Ball valueOf(int number) {
+    public static Ball fromInteger(int number) {
         validateNumberRange(number);
         return ZERO_THROUGH_NINE[number];
     }
 
-    public static Ball valueOf(String number) {
+    public static Ball fromString(String number) {
         validateNotNumber(number);
-        return valueOf(Integer.parseInt(number));
+        return fromInteger(Integer.parseInt(number));
     }
 
     @Override
