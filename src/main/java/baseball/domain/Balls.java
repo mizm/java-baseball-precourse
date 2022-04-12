@@ -1,14 +1,18 @@
 package baseball.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Balls {
 
+    private static final int BALLS_MAX_SIZE = 3;
+    private static final String BALLS_SIZE_NOT_MATCH_EXCEPTION_MESSAGE = "공의 중복될 수 없으며 갯수는 3개 입니다.";
     private final List<Ball> balls;
 
     private Balls(List<Ball> balls) {
+        Set<Ball> ballSet = new HashSet<>(balls);
+        if (ballSet.size() != BALLS_MAX_SIZE) {
+            throw new IllegalArgumentException(BALLS_SIZE_NOT_MATCH_EXCEPTION_MESSAGE);
+        }
         this.balls = balls;
     }
 
@@ -16,7 +20,7 @@ public class Balls {
         String[] numbers = numberString.split("");
         List<Ball> balls = new ArrayList<>();
         for (String input : numbers) {
-            balls.add(Ball.fromInteger(input));
+            balls.add(Ball.fromString(input));
         }
         return new Balls(balls);
     }

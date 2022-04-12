@@ -13,20 +13,20 @@ class BallTest {
     @Test
     @DisplayName("볼을 생성한다.")
     void create() {
-        Ball ball = Ball.valueOf(5);
-        assertThat(ball).isEqualTo(Ball.valueOf("5"));
-        assertThat(ball == Ball.valueOf("5")).isTrue();
+        Ball ball = Ball.fromInteger(5);
+        assertThat(ball).isEqualTo(Ball.fromString("5"));
+        assertThat(ball == Ball.fromString("5")).isTrue();
     }
 
     @Test
     @DisplayName("볼을 생성할때 1~9 범위가 아니면 IleegalArgumentException이 발생한다.")
     void createAndException() {
         assertThatThrownBy(() -> {
-            Ball.valueOf(0);
+            Ball.fromInteger(0);
         }).isInstanceOf(IllegalArgumentException.class);
 
         assertThatThrownBy(() -> {
-            Ball.valueOf(10);
+            Ball.fromInteger(10);
         }).isInstanceOf(IllegalArgumentException.class);
     }
 
@@ -34,14 +34,14 @@ class BallTest {
     @ParameterizedTest
     @ValueSource(strings = {"a", "한", "-", "/"})
     void notNumberTest(String input) {
-        assertThatIllegalArgumentException().isThrownBy(() -> Ball.valueOf(input));
+        assertThatIllegalArgumentException().isThrownBy(() -> Ball.fromString(input));
     }
 
     @DisplayName("null or empty 값이 오면 IllegalArgumentException")
     @ParameterizedTest
     @NullAndEmptySource
     void notEmptyTest(String input) {
-        assertThatIllegalArgumentException().isThrownBy(() -> Ball.valueOf(input));
+        assertThatIllegalArgumentException().isThrownBy(() -> Ball.fromString(input));
     }
 
 
