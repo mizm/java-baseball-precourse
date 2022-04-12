@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Ball {
 
-    private static final int MIN = 1;
-    private static final int MAX = 9;
+    public static final int MIN = 1;
+    public static final int MAX = 9;
     private static final String NUMBER_RANGE_EXCEPTION_MESSAGE = "공의 숫자 범위는 1~9 입니다.";
     private static final String NOT_NUMBER_EXCEPTION_MESSAGE = "입력 값이 숫자가 아닙니다.";
     private static final String EMPTY_EXCEPTION_MESSAGE = "입력 값은 빈 값 일 수 없습니다.";

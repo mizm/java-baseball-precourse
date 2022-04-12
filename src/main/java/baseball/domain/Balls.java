@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Balls {
 
-    private static final int BALLS_MAX_SIZE = 3;
+    public static final int BALLS_MAX_SIZE = 3;
     private static final String BALLS_SIZE_NOT_MATCH_EXCEPTION_MESSAGE = "공의 중복될 수 없으며 갯수는 3개 입니다.";
     private final List<Ball> balls;
 
