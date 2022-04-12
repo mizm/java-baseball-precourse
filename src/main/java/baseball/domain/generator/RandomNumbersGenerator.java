@@ -1,7 +1,7 @@
 package baseball.domain.generator;
 
-import baseball.domain.Ball;
-import baseball.domain.Balls;
+import baseball.domain.Number;
+import baseball.domain.Numbers;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.List;
@@ -9,6 +9,6 @@ import java.util.List;
 public class RandomNumbersGenerator implements NumbersGenerator {
     @Override
     public List<Integer> generate() {
-        return Randoms.pickUniqueNumbersInRange(Ball.MIN, Ball.MAX, Balls.BALLS_MAX_SIZE);
+        return Randoms.pickUniqueNumbersInRange(Number.MIN, Number.MAX, Numbers.NUMBERS_MAX_SIZE);
     }
 }

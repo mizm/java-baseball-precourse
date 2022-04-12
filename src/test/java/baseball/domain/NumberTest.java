@@ -8,25 +8,25 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.*;
 
-class BallTest {
+class NumberTest {
 
     @Test
     @DisplayName("볼을 생성한다.")
     void create() {
-        Ball ball = Ball.fromInteger(5);
-        assertThat(ball).isEqualTo(Ball.fromString("5"));
-        assertThat(ball == Ball.fromString("5")).isTrue();
+        Number number = Number.fromInteger(5);
+        assertThat(number).isEqualTo(Number.fromString("5"));
+        assertThat(number == Number.fromString("5")).isTrue();
     }
 
     @Test
     @DisplayName("볼을 생성할때 1~9 범위가 아니면 IleegalArgumentException이 발생한다.")
     void createAndException() {
         assertThatThrownBy(() -> {
-            Ball.fromInteger(0);
+            Number.fromInteger(0);
         }).isInstanceOf(IllegalArgumentException.class);
 
         assertThatThrownBy(() -> {
-            Ball.fromInteger(10);
+            Number.fromInteger(10);
         }).isInstanceOf(IllegalArgumentException.class);
     }
 
@@ -34,14 +34,14 @@ class BallTest {
     @ParameterizedTest
     @ValueSource(strings = {"a", "한", "-", "/"})
     void notNumberTest(String input) {
-        assertThatIllegalArgumentException().isThrownBy(() -> Ball.fromString(input));
+        assertThatIllegalArgumentException().isThrownBy(() -> Number.fromString(input));
     }
 
     @DisplayName("null or empty 값이 오면 IllegalArgumentException")
     @ParameterizedTest
     @NullAndEmptySource
     void notEmptyTest(String input) {
-        assertThatIllegalArgumentException().isThrownBy(() -> Ball.fromString(input));
+        assertThatIllegalArgumentException().isThrownBy(() -> Number.fromString(input));
     }
 
 

@@ -1,15 +1,21 @@
 # 기능 목록
 
-## ball
+## number
 
 - 1~9 의 숫자만 입력 될 수 있다. -> 아닐 경우 IllegalArgumentException
 
-## balls
+## numbers
 
 - 3개의 ball을 관리한다.
 - String으로 부터 3개의 ball을 생성할 수 있다.
 - List<integer>로 부터 3개의 ball을 생성할 수 있다.
 - 중복된 수가 있으면 IllegalArgumentException이 발생한다.
+- 다른 numbers 와 매칭해서 볼 카운트를 반환한다.
+- 다른 numbers 와 매칭해서 스트라이크 카운트를 반환한다.
+
+## matchResult
+
+- dto
 
 ## numberGenerator
 
