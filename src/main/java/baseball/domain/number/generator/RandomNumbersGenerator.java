@@ -1,7 +1,7 @@
-package baseball.domain.generator;
+package baseball.domain.number.generator;
 
-import baseball.domain.Number;
-import baseball.domain.Numbers;
+import baseball.domain.number.Number;
+import baseball.domain.number.Numbers;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.List;

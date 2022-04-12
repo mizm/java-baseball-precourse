@@ -1,4 +1,4 @@
-package baseball.domain;
+package baseball.domain.game;
 
 import java.util.Objects;
 
@@ -32,14 +32,9 @@ public class MatchResult {
     private final int ball;
     private final int strike;
 
-
     private MatchResult(int ball, int strike) {
         this.ball = ball;
         this.strike = strike;
-    }
-
-    public static MatchResult threeStrike() {
-        return MATCH_RESULT_ITEMS[ZERO][THREE];
     }
 
     public static MatchResult of(int ball, int strike) {
@@ -47,6 +42,10 @@ public class MatchResult {
             throw new IllegalArgumentException(FULL_COUNT_OVER_EXCEPTION_MESSAGE);
         }
         return MATCH_RESULT_ITEMS[ball][strike];
+    }
+
+    public boolean isEnd() {
+        return ball == ZERO && strike == THREE;
     }
 
     @Override

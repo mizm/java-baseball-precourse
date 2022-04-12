@@ -1,6 +1,6 @@
-package baseball.domain.generator;
+package baseball.domain.number.generator;
 
-import baseball.domain.Numbers;
+import baseball.domain.number.Numbers;
 
 public class StringNumbersGenerator implements NumbersGenerator {
 

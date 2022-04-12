@@ -15,7 +15,7 @@
 
 ## matchResult
 
-- dto
+- ball strike 정보를 가지고 있다.
 
 ## numberGenerator
 
@@ -26,3 +26,5 @@
     - 문자열로 부터 Numbers를 생성한다
 
 ## player
+
+- matchResult 공을 비교해 MatchResult를 반환한다.

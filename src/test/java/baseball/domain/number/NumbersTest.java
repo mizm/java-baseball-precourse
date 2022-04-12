@@ -1,4 +1,4 @@
-package baseball.domain;
+package baseball.domain.number;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -44,7 +44,7 @@ class NumbersTest {
         assertThat(first.ballCount(second)).isEqualTo(ballCount);
     }
 
-    @DisplayName("스트라이크인 경우 볼의 갯수를 반환한다.")
+    @DisplayName("스트라이크의 갯수를 반환한다.")
     @ParameterizedTest
     @CsvSource(value = {"123:456:0", "123:145:1", "123:124:2", "123:123:3"}, delimiter = ':')
     void strikeCountTest(String input, String compare, int ballCount) {
@@ -52,5 +52,19 @@ class NumbersTest {
         Numbers second = Numbers.fromString(compare);
 
         assertThat(first.strikeCount(second)).isEqualTo(ballCount);
+    }
+
+    @DisplayName("스트라이크와 볼의 갯수를 반환한다.")
+    @ParameterizedTest
+    @CsvSource(value = {
+            "123:456:0:0", "123:145:0:1", "123:124:0:2", "123:123:0:3",
+            "123:132:2:1"
+    }, delimiter = ':')
+    void strikeCountTest(String input, String compare, int ballCount, int strikeCount) {
+        Numbers first = Numbers.fromString(input);
+        Numbers second = Numbers.fromString(compare);
+
+        assertThat(first.ballCount(second)).isEqualTo(ballCount);
+        assertThat(first.strikeCount(second)).isEqualTo(strikeCount);
     }
 }
