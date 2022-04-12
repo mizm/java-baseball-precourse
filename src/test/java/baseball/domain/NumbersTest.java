@@ -34,13 +34,23 @@ class NumbersTest {
         assertThatIllegalArgumentException().isThrownBy(() -> Numbers.fromString("1234"));
     }
 
-    @DisplayName("볼인 경우 매치 result를 반환한다.")
+    @DisplayName("볼인 경우 볼의 갯수를 반환한다.")
     @ParameterizedTest
-    @CsvSource(value = {"123:456:0", "123:415:1", "123:234:2", "123:321:3"}, delimiter = ':')
+    @CsvSource(value = {"123:456:0", "123:415:1", "123:234:2", "123:312:3"}, delimiter = ':')
     void ballCountTest(String input, String compare, int ballCount) {
         Numbers first = Numbers.fromString(input);
         Numbers second = Numbers.fromString(compare);
 
-        assertThat(first.matchResult(second)).isEqualTo(MatchResult.of(ballCount, 0));
+        assertThat(first.ballCount(second)).isEqualTo(ballCount);
+    }
+
+    @DisplayName("스트라이크인 경우 볼의 갯수를 반환한다.")
+    @ParameterizedTest
+    @CsvSource(value = {"123:456:0", "123:145:1", "123:124:2", "123:123:3"}, delimiter = ':')
+    void strikeCountTest(String input, String compare, int ballCount) {
+        Numbers first = Numbers.fromString(input);
+        Numbers second = Numbers.fromString(compare);
+
+        assertThat(first.strikeCount(second)).isEqualTo(ballCount);
     }
 }
