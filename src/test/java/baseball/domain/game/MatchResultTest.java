@@ -28,7 +28,7 @@ class MatchResultTest {
     @CsvSource(value = {"0:1", "2:0", "2:1"}, delimiter = ':')
     void getter_테스트(int ballCount, int strikeCount) {
         MatchResult matchResult = MatchResult.of(ballCount, strikeCount);
-        
+
         assertThat(matchResult.ballCount()).isEqualTo(ballCount);
         assertThat(matchResult.strikeCount()).isEqualTo(strikeCount);
     }
