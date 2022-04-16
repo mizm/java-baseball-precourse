@@ -28,3 +28,14 @@
 ## player
 
 - matchResult 공을 비교해 MatchResult를 반환한다.
+
+## Game
+
+- play 호출 시 게임(한판)을 진행한다
+- 문제를 내는 player를 가지고 있다.
+
+## GameService
+
+- Game의 상태를 관리한다.
+- Game을 새로 시작할 수 있다.
+

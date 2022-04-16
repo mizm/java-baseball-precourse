@@ -27,7 +27,9 @@ public class MatchResult {
                     new MatchResult(3, 0)
             },
     };
+    private static final MatchResult initResult = MATCH_RESULT_ITEMS[0][0];
     private static final String FULL_COUNT_OVER_EXCEPTION_MESSAGE = "볼과 스트라이크의 합이 3을 넘을 수 없습니다.";
+    private static final String LESS_THAN_ZERO_EXCEPTION_MESSAGE = "입력 값은 0보다 작을 수 없습니다.";
 
     private final int ball;
     private final int strike;
@@ -38,14 +40,34 @@ public class MatchResult {
     }
 
     public static MatchResult of(int ball, int strike) {
+        validateLessThanZero(ball);
+        validateLessThanZero(strike);
         if (ball + strike > FULL_COUNT) {
             throw new IllegalArgumentException(FULL_COUNT_OVER_EXCEPTION_MESSAGE);
         }
         return MATCH_RESULT_ITEMS[ball][strike];
     }
 
+    private static void validateLessThanZero(int count) {
+        if (count < ZERO) {
+            throw new IllegalArgumentException(LESS_THAN_ZERO_EXCEPTION_MESSAGE);
+        }
+    }
+
+    public static MatchResult init() {
+        return initResult;
+    }
+
     public boolean isEnd() {
         return ball == ZERO && strike == THREE;
+    }
+
+    public int ballCount() {
+        return ball;
+    }
+
+    public int strikeCount() {
+        return strike;
     }
 
     @Override
