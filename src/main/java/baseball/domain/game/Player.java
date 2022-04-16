@@ -6,8 +6,12 @@ public class Player {
 
     private final Numbers numbers;
 
-    public Player(Numbers numbers) {
+    private Player(Numbers numbers) {
         this.numbers = numbers;
+    }
+
+    public static Player from(Numbers numbers) {
+        return new Player(numbers);
     }
 
     public MatchResult matchResult(Player player) {
