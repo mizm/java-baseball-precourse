@@ -5,7 +5,7 @@ import java.util.*;
 public class Numbers {
 
     public static final int NUMBERS_MAX_SIZE = 3;
-    private static final String NUMBERS_SIZE_NOT_MATCH_EXCEPTION_MESSAGE = "공의 중복될 수 없으며 갯수는 3개 입니다.";
+    private static final String NUMBERS_SIZE_NOT_MATCH_EXCEPTION_MESSAGE = "공은 중복될 수 없으며 갯수는 3개 입니다.";
     private static final int ADD_COUNT = 1;
     private static final int NO_ADD_COUNT = 0;
     private final List<Number> numbers;
